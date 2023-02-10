@@ -4,7 +4,7 @@ I would like to express my gratitude to IT Bootcamp course and especially to the
 
 This is an exercise automation test using Selenium and TestNG for one of the final projects on IT Bootcamp QA course. The project was built using Maven and Java 19.
 
-The test suite is based on the instructions from our instructors at ITBootcamp. (URL of tested website: https://automationexercise.com/)
+The test suite is based on the instructions from our instructors at ITBootcamp. (URL of tested website: https://vue-demo.daniel-avellaneda.com/)
 
 The following test cases were executed:
 
