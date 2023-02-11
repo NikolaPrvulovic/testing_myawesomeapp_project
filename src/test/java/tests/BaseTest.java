@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -28,8 +29,10 @@ public abstract class BaseTest {
     protected SignupPage signupPage;
     protected MessagePopUpPage messagePopUpPage;
     protected CitiesPage citiesPage;
+    protected ProfilePage profilePage;
+
     @BeforeClass
-    public void beforeClass(){
+    public void beforeClass() {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         this.driver = new ChromeDriver();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -37,15 +40,16 @@ public abstract class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
-        loginPage = new LoginPage(driver,wait);
+        loginPage = new LoginPage(driver, wait);
         navPage = new NavPage(driver, wait);
         signupPage = new SignupPage(driver, wait);
         messagePopUpPage = new MessagePopUpPage(driver, wait);
         citiesPage = new CitiesPage(driver, wait);
+        profilePage = new ProfilePage(driver, wait);
     }
 
     @BeforeMethod
-    public void beforeMethod(){
+    public void beforeMethod() {
         driver.get(this.baseURL);
     }
 
@@ -61,8 +65,7 @@ public abstract class BaseTest {
     }
 
     @AfterClass
-    public void afterClass(){
-
+    public void afterClass() {
         driver.quit();
     }
 }

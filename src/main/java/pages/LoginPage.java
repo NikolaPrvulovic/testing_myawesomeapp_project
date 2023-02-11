@@ -6,28 +6,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    public WebElement getInputs(String idValue){
+    public WebElement getInputs(String idValue) {
         return driver.findElement(
-                By.xpath("//input[@id='"+idValue+"']"));
+                By.xpath("//input[@id='" + idValue + "']"));
     }
-    public WebElement getLoginButton(){
-        return driver.findElement(By.xpath("//button[@type='submit']"));
+
+    public WebElement getLoginButton() {
+        return driver.findElement(
+                By.xpath("//button[@type='submit']"));
     }
-    public void verifyStatusMessageVisible(){
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@role='status']"))));
+
+    public void verifyLogoutButtonVisible() {
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(
+                By.xpath("//button[contains(@class, 'Logout')]"))));
     }
-    public WebElement getStatusMessage(){
-        return driver.findElement(By.xpath("//div[@role='status']/ul/li"));
-    }
-    public void verifyLogoutButtonVisible(){
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//button[contains(@class, 'Logout')]"))));
-    }
-    public WebElement getLogoutButton(){
-        return driver.findElement(By.xpath("//button[contains(@class, 'Logout')]"));
+
+    public WebElement getLogoutButton() {
+        return driver.findElement(
+                By.xpath("//button[contains(@class, 'Logout')]"));
     }
 }
