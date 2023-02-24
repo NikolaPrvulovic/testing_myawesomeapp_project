@@ -6,7 +6,7 @@ This is an exercise automation test using Selenium and TestNG for one of the fin
 
 The test suite is based on the instructions from our instructors at ITBootcamp. (URL of tested website: https://vue-demo.daniel-avellaneda.com/)
 
-The following test cases were executed:
+## The following test cases were executed:
 
 
 ### Login
